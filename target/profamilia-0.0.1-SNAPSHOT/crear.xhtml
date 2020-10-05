@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+    </h:head>
+ 
+    <h:body style="margin:0px;">
+	    	<h:form>
+		   
+		 
+		    <p:menuButton value="Menu">
+		        
+		        <p:menuitem value="Home" action="index" icon="pi pi-home"/>
+		        <p:menuitem value="Crear" action="crear" icon="pi pi-save"/>
+		      
+		        <p:separator />
+		    </p:menuButton>
+			</h:form>
+		
+			<h:form id="form">
+			<p:message id="messages" for="save" />
+			<div style="padding:15px;">
+			
+				<div style="padding:15px;">
+					<p:outputLabel value="Nombre: " style="font-weight:bold;"/>
+					<p:inputText value="#{listarEmpleado.empleado.nombre}" style="width:100%"/>
+				</div>
+				
+				<div style="padding:15px;">
+					<p:outputLabel value="Cargo: " style="font-weight:bold;"/>
+					<p:inputText style="width:100%" value="#{listarEmpleado.empleado.cargo}"/>
+				</div>
+				
+				<div style="padding:15px;">
+					<p:outputLabel value="Salario: " style="font-weight:bold;"/>
+					<p:inputText style="width:100%" value="#{listarEmpleado.empleado.salario}"/>
+				</div>
+				
+				<div style="padding:15px;">
+					<p:outputLabel value="Dni: " style="font-weight:bold;"/>
+					<p:inputText style="width:100%" value="#{listarEmpleado.empleado.identificacion}"/>
+				</div>
+				
+				<div style="padding:30px;">
+					<p:commandButton value="Registrar Usuario" id="save" action="#{listarEmpleado.crearEmpleado}"  style="width:100%;"/>
+					<p:spacer width="10"/>
+					
+					<p:button outcome="index" value="Cancelar" style="width:100%;"/>
+				</div>
+				
+			</div>
+		</h:form>
+    </h:body>
+</html>

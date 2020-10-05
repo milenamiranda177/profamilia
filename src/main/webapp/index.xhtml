@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+    </h:head>
+    
+ 	<h:outputText value="#{listarEmpleado.operationMessage}" style="color:green;"/>
+    <h:body style="margin:0px;" >
+			<h:form>
+		 
+		    <p:menuButton value="Menu">
+		        
+		        <p:menuitem value="Home" action="index"  icon="pi pi-home"/>
+		        <p:menuitem value="Crear" action="crear"  icon="pi pi-save"/>
+		      
+		        <p:separator />
+		    </p:menuButton>
+			</h:form>
+		
+		<h:form prependId="false">
+		    
+	        
+	<p:dataTable id="data" var="item" value="#{listarEmpleado.lista}" 
+	rowKey="#{item.identificacion}" paginator="true" 
+	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+      currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+      rowsPerPageTemplate="5,10,15"
+      emptyMessage="No hay empleados disponibles">
+			
+				<p:column headerText="Nombre">
+					<h:outputText value="#{item.nombre}"/>
+				</p:column>
+				
+				<p:column headerText="Cargo">
+					<h:outputText value="#{item.cargo}"/>
+				</p:column>
+				
+				<p:column headerText="Salario">
+					<h:outputText value="#{item.salario}"/>
+				</p:column>
+			
+				<p:column headerText="Dni">
+					<h:outputText value="#{item.identificacion}"/>
+				</p:column>
+	</p:dataTable>
+	</h:form>
+    </h:body>
+    
+    
+</html>

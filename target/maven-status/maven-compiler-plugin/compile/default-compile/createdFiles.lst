@@ -1,0 +1,6 @@
+com/profamilia/model/Empleado.class
+com/profamilia/main/ConfiguradorSpring.class
+com/profamilia/service/ServiceEmpleado.class
+com/profamilia/repository/RepositoryEmpleado.class
+com/profamilia/bean/ListarEmpleado.class
+com/profamilia/main/SpringInicializador.class
